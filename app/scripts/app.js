@@ -9,23 +9,24 @@
  * Main module of the application.
  */
 angular
-  .module('zyringApp', [
-    'ngAnimate',
-    'ngResource',
-    'ngRoute',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    .module('zyringApp', [
+        'ngAnimate',
+        'ngResource',
+        'ngRoute',
+        'ngTouch',
+        'chart.js'
+    ])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
+            })
+            .when('/about', {
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });
