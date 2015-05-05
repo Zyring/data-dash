@@ -1,6 +1,40 @@
 'use strict';
 
 /**
+ * @ngdoc overview
+ * @name zyringApp
+ * @description
+ * # zyringApp
+ *
+ * Main module of the application.
+ */
+angular
+    .module('zyringApp', [
+        'ngAnimate',
+        'ngResource',
+        'ngRoute',
+        'ngTouch',
+        'chart.js',
+        'ui.bootstrap'
+    ])
+    .config(["$routeProvider", function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/main.html',
+                controller: 'MainCtrl'
+            })
+            .when('/about', {
+                templateUrl: 'views/about.html',
+                controller: 'AboutCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    }]);
+
+'use strict';
+
+/**
  * @ngdoc function
  * @name zyringApp.controller:MainCtrl
  * @description
@@ -107,3 +141,31 @@ angular.module('zyringApp')
         });
 
     }]);
+
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name zyringApp.controller:AboutCtrl
+ * @description
+ * # AboutCtrl
+ * Controller of the zyringApp
+ */
+angular.module('zyringApp')
+  .controller('AboutCtrl', ["$scope", function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  }]);
+
+/**
+ * Created by Fathalian on 4/13/15.
+ */
+'use strict';
+angular.module('zyringApp')
+    .factory('RawData', ['$resource', function ($resource) {
+        return $resource('http://micky.zyring.com/fullEvents');
+    }]);
+
