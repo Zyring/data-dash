@@ -1,10 +1,4 @@
 # Zyring
 
-## Preparation
-
-Run 'npm install'
-Run 'bower install'
-
-## Build & development
-
-Run `grunt` for building and `grunt serve` for preview.
+## 
+This is repo contains the files for the tasks for a demo data-dashboard project on Zyring
